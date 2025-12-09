@@ -5,10 +5,10 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  timeout: 8000, // small timeout for faster failure
+  timeout: 30000, // small timeout for faster failure
 });
 
-// Get all notes (optional search)
+// Get all notes 
 export const fetchNotes = (search = "") =>
   api.get("/api/notes", {
     params: search ? { search } : {},
